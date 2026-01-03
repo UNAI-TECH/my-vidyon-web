@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ERPSection from "@/components/ERPSection";
-import AttendanceSection from "@/components/AttendanceSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import TechStackSection from "@/components/TechStackSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
@@ -16,13 +15,13 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ERPSection />
-      <AttendanceSection />
+
       <FeaturesSection />
       <TechStackSection />
       <WhyChooseSection />
       <CTASection />
       <Footer />
-    </main>
+    </main >
   );
 };
 

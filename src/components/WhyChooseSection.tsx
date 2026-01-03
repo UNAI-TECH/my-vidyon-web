@@ -12,11 +12,11 @@ const reasons = [
 
 export const WhyChooseSection = () => {
   return (
-    <section className="section-padding bg-foreground text-background relative overflow-hidden">
+    <section className="section-padding bg-[rgb(221,3,3)] text-background relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-primary blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-secondary blur-3xl" />
+        <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-[#DD0303] blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#DD0303] blur-3xl" />
       </div>
 
       <div className="container-custom relative">
@@ -35,7 +35,7 @@ export const WhyChooseSection = () => {
           <div className="grid sm:grid-cols-2 gap-4">
             {reasons.map((reason, index) => (
               <ScrollAnimation key={index} animation="fade-up" delay={index * 80}>
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-background/5 border border-background/10">
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-background/30 border border-background/40">
                   <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-4 h-4 text-primary" />
                   </div>

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
   Instagram,
-  ArrowUpRight 
+  ArrowUpRight
 } from "lucide-react";
 
 const footerLinks = {
@@ -49,27 +49,22 @@ export const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">M</span>
-              </div>
-              <span className="font-heading text-2xl font-bold text-background">
-                My Vidyon
-              </span>
+              <img src="/logo.png" alt="My Vidyon" className="h-12 w-auto" />
             </Link>
             <p className="text-background/70 mb-6 max-w-sm leading-relaxed">
-              Empowering educational institutions with intelligent ERP solutions. 
+              Empowering educational institutions with intelligent ERP solutions.
               Streamline operations, enhance learning, and drive excellence.
             </p>
             <div className="space-y-3">
-              <a 
-                href="mailto:contact@myvidyon.com" 
+              <a
+                href="mailto:contact@myvidyon.com"
                 className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 <span>contact@myvidyon.com</span>
               </a>
-              <a 
-                href="tel:+1234567890" 
+              <a
+                href="tel:+1234567890"
                 className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors"
               >
                 <Phone className="w-5 h-5" />
@@ -88,7 +83,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="text-background/70 hover:text-primary transition-colors inline-flex items-center gap-1 group"
                   >
@@ -105,7 +100,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="text-background/70 hover:text-primary transition-colors inline-flex items-center gap-1 group"
                   >
@@ -122,7 +117,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     to={link.path}
                     className="text-background/70 hover:text-primary transition-colors inline-flex items-center gap-1 group"
                   >
@@ -142,7 +137,7 @@ export const Footer = () => {
           <p className="text-background/60 text-sm">
             © {currentYear} My Vidyon. All rights reserved.
           </p>
-          
+
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (

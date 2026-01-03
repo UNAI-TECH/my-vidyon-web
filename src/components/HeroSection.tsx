@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
+import FloatingShapes from "./FloatingShapes";
 
 export const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay
@@ -16,19 +17,21 @@ export const HeroSection = () => {
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-foreground/60" />
+      {/* Light Overlay to match theme */}
+      <div className="absolute inset-0 bg-background/40 backdrop-blur-[1px]" />
+
+      <FloatingShapes />
 
       {/* Content */}
       <div className="relative z-10 container-custom text-center">
         <ScrollAnimation animation="fade-up">
-          <p className="text-lg md:text-xl text-primary font-semibold mb-4">
-            My Vidyon ERP System
-          </p>
+          <div className="flex justify-center mb-6">
+            <img src="/logo.png" alt="My Vidyon" className="h-20 md:h-24 w-auto drop-shadow-lg opacity-90" />
+          </div>
         </ScrollAnimation>
 
         <ScrollAnimation animation="fade-up" delay={100}>
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8 max-w-4xl mx-auto text-background">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8 max-w-4xl mx-auto text-foreground">
             Transforming Education Management Through{" "}
             <span className="text-primary">Intelligent Digital Solutions</span>
           </h1>
@@ -40,7 +43,7 @@ export const HeroSection = () => {
               Request a Demo
               <ChevronRight className="w-5 h-5" />
             </Link>
-            <Link to="/erp-solutions" className="inline-flex items-center justify-center gap-2 px-6 py-3 font-heading font-semibold text-background border-2 border-background/30 rounded-xl hover:bg-background/10 transition-all duration-300">
+            <Link to="/erp-solutions" className="btn-outline text-base">
               Explore Solutions
             </Link>
           </div>

@@ -1,30 +1,31 @@
-import { Users, Clock, Monitor, Headphones } from "lucide-react";
+import { UsersRound, Timer, MonitorCheck, Headset } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
+import FeatureSpotlight from "./FeatureSpotlight";
 
 const benefits = [
   {
-    icon: Users,
-    value: "95%",
-    title: "Parent Satisfaction",
-    description: "Enhanced trust through real-time access to student activities and updates.",
+    icon: UsersRound,
+    title: "Unified Platform",
+    description:
+      "One integrated system connecting students, teachers, parents, and administrators seamlessly.",
   },
   {
-    icon: Clock,
-    value: "60%",
-    title: "Operational Time Savings",
-    description: "Automation reduces administrative workload significantly.",
+    icon: Timer,
+    title: "Save Time",
+    description:
+      "Automate routine tasks and reduce administrative workload by up to 70%.",
   },
   {
-    icon: Monitor,
-    value: "100%",
-    title: "Digital Integration",
-    description: "Completely paperless workflows for modern institutions.",
+    icon: MonitorCheck,
+    title: "Real-Time Insights",
+    description:
+      "Access live dashboards and analytics to make data-driven decisions instantly.",
   },
   {
-    icon: Headphones,
-    value: "24/7",
-    title: "Platform Accessibility",
-    description: "Anytime, anywhere access for all stakeholders.",
+    icon: Headset,
+    title: "24/7 Support",
+    description:
+      "Dedicated support team available round the clock to assist with any queries.",
   },
 ];
 
@@ -56,7 +57,7 @@ export const FeaturesSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <ScrollAnimation key={index} animation="fade-up" delay={index * 80}>
-              <div className="group relative p-6 rounded-3xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-card text-center">
+              <FeatureSpotlight className="group relative p-6 rounded-3xl h-full text-center">
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-soft">
                   <benefit.icon className="w-7 h-7 text-primary-foreground" />
@@ -74,10 +75,7 @@ export const FeaturesSection = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {benefit.description}
                 </p>
-
-                {/* Gradient Border Effect */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
-              </div>
+              </FeatureSpotlight>
             </ScrollAnimation>
           ))}
         </div>

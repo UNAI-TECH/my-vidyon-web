@@ -2,12 +2,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CTASection from "@/components/CTASection";
-import { 
-  Zap, 
-  Lock, 
-  Cloud, 
-  Headphones, 
-  RefreshCw, 
+import {
+  Zap,
+  Lock,
+  Cloud,
+  Headphones,
+  RefreshCw,
   Settings,
   Palette,
   Globe,
@@ -107,27 +107,27 @@ const Features = () => {
   return (
     <main className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-28 pb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
-        
+
         <div className="container-custom relative text-center">
           <ScrollAnimation animation="fade-up">
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               Platform Features
             </span>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={100}>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl mx-auto">
               Built for <span className="text-gradient">Modern Education</span>
             </h1>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={200}>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Every feature purposefully designed by educators, for educators. 
+              Every feature purposefully designed by educators, for educators.
               Experience the perfect blend of power and simplicity.
             </p>
           </ScrollAnimation>
@@ -142,7 +142,7 @@ const Features = () => {
               Core <span className="text-gradient">Capabilities</span>
             </h2>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={100}>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
               The foundation of everything we offer. These features power every module in our platform.
@@ -171,14 +171,14 @@ const Features = () => {
       </section>
 
       {/* Technical Features */}
-      <section className="py-12 md:py-16 bg-foreground text-background">
+      <section className="py-12 md:py-16 bg-[rgb(221,3,3)] text-background">
         <div className="container-custom">
           <ScrollAnimation animation="fade-up">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
               Technical <span className="text-primary">Excellence</span>
             </h2>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={100}>
             <p className="text-background/70 text-center max-w-2xl mx-auto mb-10">
               Under the hood, our platform is built on cutting-edge technology for reliability and scale.
@@ -188,7 +188,7 @@ const Features = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {technicalFeatures.map((feature, index) => (
               <ScrollAnimation key={index} animation="scale" delay={index * 80}>
-                <div className="p-5 rounded-2xl bg-background/5 border border-background/10 hover:bg-background/10 transition-colors">
+                <div className="p-5 rounded-2xl bg-background/30 border border-background/40 hover:bg-background/50 transition-colors">
                   <feature.icon className="w-8 h-8 text-primary mb-3" />
                   <h3 className="font-heading font-semibold text-base text-background mb-2">{feature.title}</h3>
                   <p className="text-background/60 text-sm">{feature.description}</p>
@@ -207,7 +207,7 @@ const Features = () => {
               Why <span className="text-gradient">My Vidyon</span>?
             </h2>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={100}>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
               See how we stack up against traditional ERP solutions.

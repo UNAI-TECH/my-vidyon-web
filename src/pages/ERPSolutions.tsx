@@ -3,13 +3,15 @@ import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CTASection from "@/components/CTASection";
 import { Link } from "react-router-dom";
-import { 
+import { useState } from "react";
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import {
   ChevronRight,
-  GraduationCap, 
-  ClipboardList, 
-  Users2, 
-  BarChart3, 
-  CreditCard, 
+  GraduationCap,
+  ClipboardList,
+  Users2,
+  BarChart3,
+  CreditCard,
   MessageSquare,
   Calendar,
   BookOpen,
@@ -96,155 +98,181 @@ const modules = [
 ];
 
 const ERPSolutions = () => {
+  const [showContent, setShowContent] = useState(false);
+
+  const handleExploreMore = () => {
+    setShowContent(true);
+    setTimeout(() => {
+      const element = document.getElementById('modules-section');
+      if (element) {
+        const yOffset = -100; // Offset to show heading properly
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <main className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero */}
-      <section className="h-screen flex items-center relative overflow-hidden">
+      <section id="hero" className="h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
-        
+
         <div className="container-custom relative">
           <ScrollAnimation animation="fade-up">
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               ERP Solutions
             </span>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={100}>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl">
               Complete Educational{" "}
               <span className="text-gradient">ERP Platform</span>
             </h1>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={200}>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-6">
-              Our modular ERP system seamlessly integrates every aspect of educational 
+              Our modular ERP system seamlessly integrates every aspect of educational
               institution management. Pick the modules you need, or deploy the complete suite.
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={300}>
-            <Link to="/contact" className="btn-cta">
-              Schedule a Demo
-              <ChevronRight className="w-5 h-5" />
-            </Link>
+            <InteractiveHoverButton
+              onClick={handleExploreMore}
+              text="Explore More"
+              className="w-52 px-6 py-3 text-base"
+            />
           </ScrollAnimation>
         </div>
       </section>
 
-      {/* Modules Grid */}
-      <section className="py-12 md:py-16">
-        <div className="container-custom">
-          <ScrollAnimation animation="fade-up">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
-              12 Integrated <span className="text-gradient">Modules</span>
-            </h2>
-          </ScrollAnimation>
-          
-          <ScrollAnimation animation="fade-up" delay={100}>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-              Each module is designed to work independently or as part of the complete ecosystem. 
-              Start small and scale as you grow.
-            </p>
-          </ScrollAnimation>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {modules.map((module, index) => (
-              <ScrollAnimation key={index} animation="fade-up" delay={index * 50}>
-                <div className={`card-elevated p-5 h-full ${module.highlight ? "ring-2 ring-primary/50" : ""}`}>
-                  {module.highlight && (
-                    <span className="inline-block text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full mb-3">
-                      Most Popular
-                    </span>
-                  )}
-                  <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-4">
-                    <module.icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <h3 className="font-heading font-semibold text-lg mb-2">{module.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{module.description}</p>
-                  <ul className="space-y-1.5">
-                    {module.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-xs">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Section */}
-      <section className="py-12 md:py-16 bg-foreground text-background">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <ScrollAnimation animation="fade-right">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-5">
-                  Seamless <span className="text-primary">Integration</span>
+      {showContent && (
+        <>
+          {/* Modules Grid */}
+          <section id="modules-section" className="py-12 md:py-16">
+            <div className="container-custom">
+              <ScrollAnimation animation="fade-up">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
+                  12 Integrated <span className="text-gradient">Modules</span>
                 </h2>
               </ScrollAnimation>
-              
-              <ScrollAnimation animation="fade-right" delay={100}>
-                <p className="text-background/70 leading-relaxed mb-5">
-                  Our ERP platform is designed with interoperability in mind. All modules share a 
-                  unified database, ensuring data consistency and eliminating redundancy.
+
+              <ScrollAnimation animation="fade-up" delay={100}>
+                <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+                  Each module is designed to work independently or as part of the complete ecosystem.
+                  Start small and scale as you grow.
                 </p>
               </ScrollAnimation>
-              
-              <ScrollAnimation animation="fade-right" delay={200}>
-                <ul className="space-y-3">
-                  {[
-                    "Single sign-on across all modules",
-                    "Real-time data synchronization",
-                    "Unified reporting dashboard",
-                    "API access for custom integrations",
-                    "Third-party app marketplace",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3 text-background/80 text-sm">
-                      <ChevronRight className="w-4 h-4 text-primary shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </ScrollAnimation>
-            </div>
-            
-            <ScrollAnimation animation="fade-left">
-              <div className="relative">
-                {/* Central Hub */}
-                <div className="w-28 h-28 rounded-full bg-primary flex items-center justify-center mx-auto z-10 relative">
-                  <span className="font-heading font-bold text-primary-foreground text-sm">My Vidyon</span>
-                </div>
-                
-                {/* Orbiting Modules */}
-                <div className="absolute inset-0 animate-spin-slow" style={{ animationDuration: "30s" }}>
-                  {[GraduationCap, ClipboardList, BarChart3, CreditCard].map((Icon, index) => (
-                    <div
-                      key={index}
-                      className="absolute w-10 h-10 rounded-full bg-background/10 flex items-center justify-center"
-                      style={{
-                        top: `${50 + 40 * Math.sin((index * Math.PI) / 2)}%`,
-                        left: `${50 + 40 * Math.cos((index * Math.PI) / 2)}%`,
-                        transform: "translate(-50%, -50%)",
-                      }}
-                    >
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollAnimation>
-          </div>
-        </div>
-      </section>
 
-      <CTASection />
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {modules.map((module, index) => (
+                  <ScrollAnimation key={index} animation="fade-up" delay={index * 50}>
+                    <div className={`card-elevated p-6 h-full hover:border-primary/30 ${module.highlight ? 'border-primary/50 relative' : ''}`}>
+                      {module.highlight && (
+                        <span className="absolute -top-3 right-4 text-xs font-semibold text-primary-foreground bg-primary px-3 py-1 rounded-full">
+                          Most Popular
+                        </span>
+                      )}
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0">
+                          <module.icon className="w-6 h-6 text-primary-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-heading font-semibold text-lg mb-1">{module.title}</h3>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                        {module.description}
+                      </p>
+                      <ul className="space-y-2">
+                        {module.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </ScrollAnimation>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Integration Section */}
+          <section className="py-12 md:py-16 bg-[rgb(221,3,3)] text-background">
+            <div className="container-custom">
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                  <ScrollAnimation animation="fade-right">
+                    <h2 className="font-heading text-2xl md:text-3xl font-bold mb-5">
+                      Seamless <span className="text-primary">Integration</span>
+                    </h2>
+                  </ScrollAnimation>
+
+                  <ScrollAnimation animation="fade-right" delay={100}>
+                    <p className="text-background/70 leading-relaxed mb-5">
+                      Our ERP platform is designed with interoperability in mind. All modules share a
+                      unified database, ensuring data consistency and eliminating redundancy.
+                    </p>
+                  </ScrollAnimation>
+
+                  <ScrollAnimation animation="fade-right" delay={200}>
+                    <ul className="space-y-3">
+                      {[
+                        "Single sign-on across all modules",
+                        "Real-time data synchronization",
+                        "Unified reporting dashboard",
+                        "API access for custom integrations",
+                        "Third-party app marketplace",
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-center gap-3 text-background/80 text-sm">
+                          <ChevronRight className="w-4 h-4 text-primary shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </ScrollAnimation>
+                </div>
+
+                <ScrollAnimation animation="fade-left">
+                  <div className="relative">
+                    {/* Central Hub */}
+                    <div className="w-28 h-28 rounded-full bg-primary flex items-center justify-center mx-auto z-10 relative">
+                      <span className="font-heading font-bold text-primary-foreground text-sm">My Vidyon</span>
+                    </div>
+
+                    {/* Orbiting Modules */}
+                    <div className="absolute inset-0 animate-spin-slow" style={{ animationDuration: "30s" }}>
+                      {[GraduationCap, ClipboardList, BarChart3, CreditCard].map((Icon, index) => (
+                        <div
+                          key={index}
+                          className="absolute w-10 h-10 rounded-full bg-background/10 flex items-center justify-center"
+                          style={{
+                            top: `${50 + 40 * Math.sin((index * Math.PI) / 2)}%`,
+                            left: `${50 + 40 * Math.cos((index * Math.PI) / 2)}%`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <Icon className="w-5 h-5 text-primary" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollAnimation>
+              </div>
+            </div>
+          </section>
+
+          <CTASection />
+        </>
+      )}
+
       <Footer />
     </main>
   );

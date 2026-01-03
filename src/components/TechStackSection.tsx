@@ -1,43 +1,43 @@
-import { 
-  Brain, 
-  Bell, 
-  Smartphone, 
-  Cloud, 
-  ScanFace, 
-  Shield 
+import {
+  Sparkles,
+  BellRing,
+  TabletSmartphone,
+  CloudCog,
+  ScanEye,
+  ShieldCheck
 } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 
-const techFeatures = [
+const technologies = [
   {
-    icon: Brain,
-    title: "AI-Powered Analytics",
-    description: "Intelligent insights derived from academic and operational data.",
+    icon: Sparkles,
+    title: "AI-Powered Insights",
+    description: "Machine learning algorithms for predictive analytics and intelligent automation.",
   },
   {
-    icon: Bell,
+    icon: BellRing,
     title: "Real-Time Notifications",
-    description: "Instant alerts and updates delivered across devices.",
+    description: "Instant alerts and updates via SMS, email, and push notifications.",
   },
   {
-    icon: Smartphone,
+    icon: TabletSmartphone,
     title: "Mobile-First Design",
-    description: "Seamless experience across mobile, tablet, and desktop.",
+    description: "Responsive interface optimized for smartphones, tablets, and desktops.",
   },
   {
-    icon: Cloud,
-    title: "Cloud-Based Infrastructure",
-    description: "Secure, scalable, and always available.",
+    icon: CloudCog,
+    title: "Cloud Infrastructure",
+    description: "Scalable, secure cloud hosting with 99.99% uptime guarantee.",
   },
   {
-    icon: ScanFace,
-    title: "Facial Recognition Technology",
-    description: "Automated camera-based attendance monitoring.",
+    icon: ScanEye,
+    title: "Biometric Integration",
+    description: "Advanced facial recognition and fingerprint scanning capabilities.",
   },
   {
-    icon: Shield,
-    title: "Enterprise-Grade Data Security",
-    description: "Robust protection to safeguard institutional data.",
+    icon: ShieldCheck,
+    title: "Enterprise Security",
+    description: "Bank-grade encryption and compliance with global data protection standards.",
   },
 ];
 
@@ -63,7 +63,7 @@ export const TechStackSection = () => {
 
         {/* Tech Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {techFeatures.map((feature, index) => (
+          {technologies.map((feature, index) => (
             <ScrollAnimation key={index} animation="fade-up" delay={index * 80}>
               <div className="group p-6 rounded-2xl border border-border/50 hover:border-primary/30 bg-card transition-all duration-500 hover:-translate-y-1 hover:shadow-card">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">

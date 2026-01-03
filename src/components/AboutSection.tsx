@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom";
-import { ChevronRight, Camera, LayoutDashboard, CreditCard, BarChart3 } from "lucide-react";
+import { ChevronRight, ScanFace, LayoutGrid, Wallet, TrendingUp } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 
 const features = [
   {
-    icon: Camera,
+    icon: ScanFace,
     title: "Smart Attendance Monitoring",
     description: "Camera-based attendance detection with real-time tracking for accuracy and reliability.",
   },
   {
-    icon: LayoutDashboard,
+    icon: LayoutGrid,
     title: "Comprehensive Dashboards",
     description: "Role-based dashboards offering tailored access for administrators, teachers, parents, and students.",
   },
   {
-    icon: CreditCard,
+    icon: Wallet,
     title: "Secure Fee Management",
     description: "Transparent, streamlined, and secure payment processing with complete financial visibility.",
   },
   {
-    icon: BarChart3,
+    icon: TrendingUp,
     title: "Performance Analytics",
     description: "Actionable academic insights through data-driven performance reports.",
   },
@@ -30,7 +30,7 @@ export const AboutSection = () => {
     <section className="section-padding relative overflow-hidden">
       {/* Subtle Background */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
-      
+
       <div className="container-custom relative">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
@@ -49,16 +49,16 @@ export const AboutSection = () => {
 
           <ScrollAnimation animation="fade-up" delay={200}>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              My Vidyon is a powerful and comprehensive ERP platform built exclusively for schools and colleges. 
-              Designed to simplify daily operations and enhance collaboration, My Vidyon connects students, 
+              My Vidyon is a powerful and comprehensive ERP platform built exclusively for schools and colleges.
+              Designed to simplify daily operations and enhance collaboration, My Vidyon connects students,
               teachers, parents, and administrators through a single, unified digital ecosystem.
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={300}>
             <p className="text-muted-foreground leading-relaxed">
-              From smart attendance tracking to secure fee management and performance analytics, 
-              My Vidyon delivers real-time insights that empower institutions to operate efficiently, 
+              From smart attendance tracking to secure fee management and performance analytics,
+              My Vidyon delivers real-time insights that empower institutions to operate efficiently,
               transparently, and confidently in today's digital-first education environment.
             </p>
           </ScrollAnimation>

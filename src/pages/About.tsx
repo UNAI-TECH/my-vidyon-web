@@ -41,32 +41,51 @@ const About = () => {
   return (
     <main className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero */}
-      <section className="h-screen flex items-center relative overflow-hidden">
+      <section className="min-h-[50vh] flex items-center relative overflow-hidden py-12 mt-16 md:mt-0">
         <div className="absolute inset-0 bg-gradient-hero" />
-        
-        <div className="container-custom relative">
-          <ScrollAnimation animation="fade-up">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-              About Us
-            </span>
-          </ScrollAnimation>
-          
-          <ScrollAnimation animation="fade-up" delay={100}>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl">
-              Transforming Education Through{" "}
-              <span className="text-gradient">Intelligent Technology</span>
-            </h1>
-          </ScrollAnimation>
-          
-          <ScrollAnimation animation="fade-up" delay={200}>
-            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              We're not just building software — we're shaping the future of educational 
-              management. Our solutions connect administrators, teachers, students, and 
-              parents in one seamless ecosystem.
-            </p>
-          </ScrollAnimation>
+
+        <div className="container-custom relative z-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left Content */}
+            <div className="order-2 lg:order-1">
+              <ScrollAnimation animation="fade-right">
+                <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                  About Us
+                </span>
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fade-right" delay={100}>
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
+                  Transforming Education Through{" "}
+                  <span className="text-gradient">Intelligent Technology</span>
+                </h1>
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fade-right" delay={200}>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+                  We're not just building software — we're shaping the future of educational
+                  management. Our solutions connect administrators, teachers, students, and
+                  parents in one seamless ecosystem.
+                </p>
+              </ScrollAnimation>
+            </div>
+
+            {/* Right Image */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <ScrollAnimation animation="fade-left" delay={300}>
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl opacity-50 animate-pulse-subtle" />
+                  <img
+                    src="/about-hero.png"
+                    alt="Transforming Education"
+                    className="relative w-full max-w-md lg:max-w-lg h-auto object-contain z-10 drop-shadow-2xl"
+                  />
+                </div>
+              </ScrollAnimation>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -89,74 +108,10 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-12 md:py-16 bg-foreground text-background">
-        <div className="container-custom">
-          <ScrollAnimation animation="fade-up">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-10">
-              Our Impact in <span className="text-primary">Numbers</span>
-            </h2>
-          </ScrollAnimation>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <ScrollAnimation key={index} animation="scale" delay={index * 100}>
-                <div className="text-center p-5 rounded-2xl bg-background/5 border border-background/10">
-                  <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <div className="font-heading text-3xl md:text-4xl font-bold text-primary mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-background/70 text-sm">{stat.label}</div>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Timeline */}
-      <section className="py-12 md:py-16">
-        <div className="container-custom">
-          <ScrollAnimation animation="fade-up">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
-              Our <span className="text-gradient">Journey</span>
-            </h2>
-          </ScrollAnimation>
-          
-          <ScrollAnimation animation="fade-up" delay={100}>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-              From a small startup to a leading EdTech company, here's how we've grown.
-            </p>
-          </ScrollAnimation>
 
-          <div className="relative max-w-3xl mx-auto">
-            {/* Timeline Line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border" />
-            
-            {milestones.map((milestone, index) => (
-              <ScrollAnimation 
-                key={index} 
-                animation={index % 2 === 0 ? "fade-right" : "fade-left"} 
-                delay={index * 100}
-              >
-                <div className={`relative flex items-center gap-8 mb-8 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}>
-                  {/* Dot */}
-                  <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-primary -translate-x-1/2 z-10" />
-                  
-                  {/* Content */}
-                  <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                    <span className="inline-block text-sm font-semibold text-primary mb-1">{milestone.year}</span>
-                    <h3 className="font-heading font-bold text-lg mb-1">{milestone.title}</h3>
-                    <p className="text-muted-foreground text-sm">{milestone.description}</p>
-                  </div>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us */}
       <section className="py-12 md:py-16 bg-muted/30">
@@ -168,15 +123,15 @@ const About = () => {
                   Why Institutions <span className="text-gradient">Choose Us</span>
                 </h2>
               </ScrollAnimation>
-              
+
               <ScrollAnimation animation="fade-right" delay={100}>
                 <p className="text-muted-foreground leading-relaxed mb-5">
-                  We understand that every institution is unique. That's why our solutions 
-                  are built to be flexible, scalable, and intuitive. Our team consists of 
+                  We understand that every institution is unique. That's why our solutions
+                  are built to be flexible, scalable, and intuitive. Our team consists of
                   education specialists who have walked in your shoes.
                 </p>
               </ScrollAnimation>
-              
+
               <ScrollAnimation animation="fade-right" delay={200}>
                 <ul className="space-y-3">
                   {[
@@ -193,12 +148,12 @@ const About = () => {
                 </ul>
               </ScrollAnimation>
             </div>
-            
+
             <ScrollAnimation animation="fade-left">
               <div className="card-elevated p-6">
                 <blockquote className="text-base italic text-muted-foreground leading-relaxed mb-5">
-                  "My Vidyon transformed how we manage our school. What used to take hours 
-                  now takes minutes. The attendance system alone has saved us countless 
+                  "My Vidyon transformed how we manage our school. What used to take hours
+                  now takes minutes. The attendance system alone has saved us countless
                   headaches and improved parent communication significantly."
                 </blockquote>
                 <div className="flex items-center gap-4">
