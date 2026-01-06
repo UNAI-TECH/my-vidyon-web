@@ -13,6 +13,7 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { toast } from "sonner";
+import { submitContactForm } from "@/lib/supabase";
 
 const contactInfo = [
   {
@@ -74,12 +75,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      // Call Supabase Edge Function (secure, no credentials exposed)
+      const result = await submitContactForm({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        institution: formData.institution,
+        message: formData.message,
+      });
 
-    toast.success("Thank you for reaching out! We'll get back to you within 24 hours.");
-    setFormData({ name: "", email: "", phone: "", institution: "", message: "" });
-    setIsSubmitting(false);
+      if (result.success) {
+        toast.success(result.message || "Thank you for reaching out! We'll get back to you within 24 hours.");
+        setFormData({ name: "", email: "", phone: "", institution: "", message: "" });
+      } else {
+        toast.error(result.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error("Sorry, there was an error sending your message. Please try again or email us directly at madhan.p@storyseed.in");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
