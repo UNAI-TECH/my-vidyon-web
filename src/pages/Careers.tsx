@@ -37,38 +37,38 @@ const careerAreas = [
     {
         icon: Code,
         title: "Engineering & Development",
-        description: "Build scalable solutions for educational institutions using cutting-edge technologies like React, Node.js, and cloud platforms. Work on real-world problems that impact millions of students.",
-        image: "/placeholder.svg"
+        description: "End-to-end ERP engineering for educational institutions, built with React, Node.js, and cloud platforms to ensure scalability, security, and efficiency.",
+        image: "/career_engineering_dev_1767685269978.png"
     },
     {
         icon: Lightbulb,
         title: "Product & Design",
-        description: "Create intuitive, beautiful interfaces that transform the education experience. Use design thinking and user research to build products that teachers and students love.",
-        image: "/placeholder.svg"
+        description: "Design intuitive, user-friendly ERP interfaces that simplify education management. Our design-driven ERP solutions enhance usability for teachers, students, and administrators through research-backed UI/UX and smart workflows.",
+        image: "/career_product_design_1767685286373.png"
     },
     {
         icon: Users,
         title: "Customer Success",
-        description: "Help educational institutions succeed and grow with My Vidyon solutions. Build lasting relationships and ensure our clients achieve their goals.",
-        image: "/placeholder.svg"
+        description: "Empower educational institutions to scale and succeed with My Vidyon ERP solutions. We help schools improve outcomes, streamline operations, and build long-term success.",
+        image: "/career_customer_success_1767685306065.png"
     },
     {
         icon: BarChart,
         title: "Sales & Marketing",
-        description: "Drive growth and build relationships with schools and educational institutions. Tell our story and help more schools discover the power of My Vidyon.",
-        image: "/placeholder.svg"
+        description: "Accelerate growth by connecting schools with My Vidyon's smart ERP platform. Drive enrollment, strengthen relationships, and expand digital adoption across institutions.",
+        image: "/career_sales_marketing_1767685334991.png"
     },
     {
         icon: Brain,
         title: "AI & Analytics",
-        description: "Use data and AI to create insights that help schools make better decisions. Work with cutting-edge machine learning and analytics technologies.",
-        image: "/placeholder.svg"
+        description: "Unlock actionable insights with AI-powered analytics for education ERP. Enable data-driven decisions, performance tracking, and smarter academic planning.",
+        image: "/career_ai_analytics_1767685352016.png"
     },
     {
         icon: Shield,
         title: "Security & Operations",
-        description: "Ensure platform reliability, security, and seamless operations. Protect student data and maintain the trust schools place in us.",
-        image: "/placeholder.svg"
+        description: "Deliver secure, reliable, and scalable education ERP operations. Protect student data, ensure compliance, and maintain uninterrupted platform performance.",
+        image: "/career_security_operations_1767685370672.png"
     },
 ];
 
@@ -76,67 +76,66 @@ const careerStages = [
     {
         id: "students",
         icon: GraduationCap,
-        title: "Students",
-        description: "You'll join a great place to build your skills and launch your career. From summer internships to innovation-led opportunities, we welcome your curiosity and fresh perspectives.",
+        title: "Students & Fresh Graduates",
+        description: "Kickstart your career with a modern ERP ecosystem built for learning, innovation, and real-world impact. Gain hands-on experience, industry exposure, and career-ready skills from day one.",
         details: [
             "Paid internship programs",
-            "Mentorship from senior professionals",
-            "Hands-on project experience",
-            "Potential for full-time conversion"
+            "Expert mentorship",
+            "Real ERP project exposure",
+            "Full-time role opportunities"
         ],
-        image: "/placeholder.svg"
+        image: "/career_stage_students_v2_1767687046851.png"
     },
     {
         id: "early-career",
         icon: Rocket,
-        title: "Early career professionals",
-        description: "You're our future leaders. Bring your skills and passion to work with the latest technology to solve for some of education's biggest challenges.",
+        title: "Early Career Professionals",
+        description: "Accelerate your growth with enterprise-grade ERP solutions that sharpen your technical, analytical, and problem-solving skills in a collaborative environment.",
         details: [
-            "Structured onboarding program",
-            "Career development workshops",
+            "Structured onboarding",
+            "Skill development workshops",
             "Cross-functional collaboration",
-            "Fast-track leadership opportunities"
+            "Fast-track career growth"
         ],
-        image: "/placeholder.svg"
+        image: "/career_stage_early_career_1767687077438.png"
     },
     {
         id: "experienced",
         icon: Trophy,
-        title: "Experienced professionals",
-        description: "You see around corners and create solutions. Join our global innovators to help transform education and change the world for the better.",
+        title: "Experienced Professionals",
+        description: "Drive digital transformation in education with scalable ERP platforms. Lead innovation, mentor teams, and shape next-generation education systems.",
         details: [
-            "Lead strategic initiatives",
-            "Mentor junior team members",
-            "Shape product direction",
-            "Competitive compensation packages"
+            "Strategic leadership roles",
+            "Product and platform ownership",
+            "Team mentorship",
+            "Global impact projects"
         ],
-        image: "/placeholder.svg"
+        image: "/career_stage_experienced_1767687101444.png"
     },
     {
         id: "executive",
         icon: Target,
-        title: "Executive leaders",
-        description: "You see endless possibilities and embrace challenges—and change. See how to use your ingenuity and expertise to drive our mission forward.",
+        title: "Executive Leaders",
+        description: "Lead with vision using intelligent ERP systems designed to scale institutions and optimize operations. Influence strategy, innovation, and long-term growth.",
         details: [
             "C-suite and VP positions",
-            "Strategic decision-making",
-            "Company-wide impact",
-            "Equity and performance bonuses"
+            "Enterprise decision-making",
+            "Organization-wide transformation"
         ],
-        image: "/placeholder.svg"
+        image: "/career_stage_executive_1767687117424.png"
     },
     {
         id: "returners",
         icon: RefreshCw,
         title: "Career Rebooters",
-        description: "Discover how My Vidyon's Career Reboot Program is helping people on a career break restart their careers and thrive in the workforce.",
+        description: "Restart your career with My Vidyon's Career Reboot Program. Our ERP-focused training and flexible work models help you re-enter the workforce with confidence.",
         details: [
-            "Flexible return-to-work programs",
-            "Skills refresher training",
-            "Supportive team environment",
+            "Flexible return-to-work options",
+            "Skill refresher training",
+            "Supportive work culture",
             "Part-time to full-time transition"
         ],
-        image: "/placeholder.svg"
+        image: "/career_stage_rebooters_1767687134207.png"
     },
 ];
 
@@ -234,13 +233,14 @@ const CareersPage = () => {
                     <div className="max-w-4xl mx-auto text-center">
                         <ScrollAnimation animation="fade-up">
                             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-foreground">
-                                Work at the heart of <span className="text-gradient">change</span>
+                                Your next big opportunity  <span className="text-gradient">starts here</span>
                             </h1>
                         </ScrollAnimation>
 
                         <ScrollAnimation animation="fade-up" delay={100}>
                             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-                                This is a place to grow, learn and connect. Everything that makes you who you are is welcome here.
+                                Be part of a future-ready workplace powered by intelligent ERP systems. <br></br>We enable growth, learning,
+                                and seamless collaboration through scalable enterprise resource planning solutions.
                             </p>
                         </ScrollAnimation>
 
@@ -299,14 +299,12 @@ const CareersPage = () => {
 
                                 {/* Right Side - Image */}
                                 <div className="flex items-center justify-center">
-                                    <div className="w-full aspect-video rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                                        <div className="text-center p-6">
-                                            {(() => {
-                                                const Icon = careerAreas[currentCareerArea].icon;
-                                                return <Icon className="w-20 h-20 text-primary mx-auto mb-3" />;
-                                            })()}
-                                            <p className="text-muted-foreground text-sm">Career Area Illustration</p>
-                                        </div>
+                                    <div className="w-full aspect-video rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center overflow-hidden shadow-inner">
+                                        <img
+                                            src={careerAreas[currentCareerArea].image}
+                                            alt={careerAreas[currentCareerArea].title}
+                                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -381,14 +379,12 @@ const CareersPage = () => {
                             <div className="grid md:grid-cols-2 gap-8 items-center">
                                 {/* Left: Image */}
                                 <div className="order-2 md:order-1">
-                                    <div className="w-full aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                                        <div className="text-center p-8">
-                                            {(() => {
-                                                const Icon = selectedCareerStage.icon;
-                                                return <Icon className="w-24 h-24 text-primary mx-auto mb-4" />;
-                                            })()}
-                                            <p className="text-muted-foreground text-base font-medium">{selectedCareerStage.title}</p>
-                                        </div>
+                                    <div className="w-full aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center overflow-hidden shadow-inner">
+                                        <img
+                                            src={selectedCareerStage.image}
+                                            alt={selectedCareerStage.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                        />
                                     </div>
                                 </div>
 

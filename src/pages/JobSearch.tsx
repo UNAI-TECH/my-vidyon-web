@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
-import { Search, MapPin, Briefcase, Clock } from "lucide-react";
+import { Search, MapPin, Briefcase, Clock, ArrowLeft } from "lucide-react";
 
 const JobSearchPage = () => {
     return (
@@ -16,6 +16,17 @@ const JobSearchPage = () => {
                 </div>
 
                 <div className="container-custom relative z-10">
+                    {/* Back Button */}
+                    <div className="mb-6">
+                        <a
+                            href="/careers"
+                            className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group"
+                        >
+                            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                            <span className="font-semibold">Back to Careers</span>
+                        </a>
+                    </div>
+
                     <div className="max-w-4xl mx-auto text-center">
                         <ScrollAnimation animation="fade-up">
                             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-foreground">
@@ -59,33 +70,20 @@ const JobSearchPage = () => {
                         </div>
 
                         {/* Job Listings */}
-                        <div className="space-y-4">
-                            {[1, 2, 3, 4, 5].map((job) => (
-                                <div key={job} className="card-elevated p-6 hover:shadow-elevated transition-all">
-                                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                                        <div className="flex-1">
-                                            <h3 className="font-heading text-xl font-bold mb-2">Software Engineer</h3>
-                                            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                                                <div className="flex items-center gap-2">
-                                                    <Briefcase className="w-4 h-4" />
-                                                    <span>Full-time</span>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <MapPin className="w-4 h-4" />
-                                                    <span>Remote</span>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <Clock className="w-4 h-4" />
-                                                    <span>Posted 2 days ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button className="px-6 py-2 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-all">
-                                            Apply Now
-                                        </button>
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="text-center py-16">
+                            <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
+                                <Search className="w-10 h-10 text-muted-foreground" />
+                            </div>
+                            <h3 className="font-heading text-2xl font-bold mb-3">No Jobs Available</h3>
+                            <p className="text-muted-foreground max-w-md mx-auto mb-6">
+                                We don't have any open positions at the moment. Check back soon or explore other sections of our careers page.
+                            </p>
+                            <a
+                                href="/careers"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-all"
+                            >
+                                Back to Careers
+                            </a>
                         </div>
                     </div>
                 </div>
