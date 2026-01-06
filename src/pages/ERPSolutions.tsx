@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import {
-  ChevronRight,
   GraduationCap,
   ClipboardList,
   Users2,
@@ -14,86 +13,65 @@ import {
   CreditCard,
   MessageSquare,
   Calendar,
-  BookOpen,
   FileText,
   Shield,
-  Bus,
-  Library
 } from "lucide-react";
 
 const modules = [
   {
     icon: GraduationCap,
     title: "Academic Management",
-    description: "Comprehensive curriculum planning, class scheduling, examination management, and grade tracking all in one unified system.",
-    features: ["Curriculum mapping", "Timetable automation", "Exam scheduling", "Grade analytics"],
+    description: "Manage curriculum, classes, exams, and grades from one smart academic control center.",
+    features: ["Curriculum planning", "Automated timetables", "Exam & result management", "Performance analytics"],
   },
   {
     icon: ClipboardList,
     title: "Attendance Monitoring",
-    description: "AI-powered facial recognition and biometric integration for accurate, real-time attendance tracking with parent notifications.",
-    features: ["Facial recognition", "Biometric support", "Real-time alerts", "Detailed reports"],
+    description: "Accurate, real-time student attendance using AI-powered facial recognition and biometrics.",
+    features: ["Facial recognition & biometrics", "Live attendance tracking", "Instant parent alerts", "Detailed attendance reports"],
     highlight: true,
   },
   {
     icon: Users2,
     title: "Student Information System",
-    description: "Centralized database for all student records including enrollment, academic history, health records, and documents.",
-    features: ["Digital enrollment", "Document management", "Health records", "Alumni tracking"],
+    description: "A secure, centralized system for complete student data management.",
+    features: ["Digital admissions & enrollment", "Academic & personal records", "Health & document storage", "Alumni tracking"],
   },
   {
     icon: BarChart3,
     title: "Analytics & Reporting",
-    description: "Powerful dashboards with actionable insights, custom reports, and predictive analytics for informed decision-making.",
-    features: ["Custom dashboards", "Predictive analytics", "Export capabilities", "Trend analysis"],
+    description: "Data driven dashboards that help school leaders make smarter decisions.",
+    features: ["Custom dashboards", "Predictive insights", "Trend analysis", "Easy data exports"],
   },
   {
     icon: CreditCard,
     title: "Fee Management",
-    description: "Streamlined billing, online payment gateway integration, automated receipts, and fee defaulter tracking.",
-    features: ["Online payments", "Auto-receipts", "Payment reminders", "Financial reports"],
+    description: "Simplified school fee collection with automation and transparency.",
+    features: ["Online fee payments", "Automated receipts", "Fee reminders", "Financial reports"],
   },
   {
     icon: MessageSquare,
     title: "Communication Hub",
-    description: "Multi-channel messaging between teachers, students, and parents with push notifications and announcements.",
-    features: ["Push notifications", "Group messaging", "Announcements", "SMS integration"],
+    description: "Seamless communication between schools, teachers, parents, and students.",
+    features: ["Push notifications", "Group & broadcast messaging", "Announcements", "SMS integration"],
   },
   {
     icon: Calendar,
     title: "Event Management",
-    description: "Plan and manage school events, holidays, activities with integrated calendar and parent RSVPs.",
-    features: ["Event calendar", "RSVP management", "Resource booking", "Reminders"],
-  },
-  {
-    icon: BookOpen,
-    title: "Library Management",
-    description: "Complete library automation with book cataloging, issue/return tracking, and fine management.",
-    features: ["Book cataloging", "Barcode scanning", "Due reminders", "Fine tracking"],
+    description: "Plan and manage school events, holidays, and activities with ease.",
+    features: ["Event calendar", "Parent RSVPs", "Resource booking", "Automated reminders"],
   },
   {
     icon: FileText,
     title: "Document Management",
-    description: "Secure digital document storage, transfer certificates, and automated report card generation.",
-    features: ["Cloud storage", "TC generation", "Report cards", "Digital signatures"],
+    description: "Paperless document handling with secure digital storage.",
+    features: ["Cloud based storage", "Transfer certificate generation", "Digital report cards", "E-signatures"],
   },
   {
     icon: Shield,
     title: "User & Access Control",
-    description: "Role-based access with granular permissions ensuring data security and privacy compliance.",
-    features: ["Role management", "Audit logs", "Data encryption", "GDPR compliant"],
-  },
-  {
-    icon: Bus,
-    title: "Transport Management",
-    description: "Vehicle tracking, route optimization, and transport fee management with driver assignment.",
-    features: ["GPS tracking", "Route planning", "Fee management", "Driver allocation"],
-  },
-  {
-    icon: Library,
-    title: "Hostel Management",
-    description: "Room allocation, mess management, visitor tracking, and hostel fee collection.",
-    features: ["Room allocation", "Mess management", "Visitor logs", "Fee collection"],
+    description: "Enterprise grade security with role-based access and compliance.",
+    features: ["Role & permission management", "Activity audit logs", "Encrypted data security", "GDPR-compliant system"],
   },
 ];
 
@@ -129,15 +107,15 @@ const ERPSolutions = () => {
 
           <ScrollAnimation animation="fade-up" delay={100}>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 max-w-4xl">
-              Complete Educational{" "}
-              <span className="text-gradient">ERP Platform</span>
+              All-in-One{" "}
+              <span className="text-gradient">School ERP Platform</span>
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={200}>
             <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed mb-6">
-              Our modular ERP system seamlessly integrates every aspect of educational
-              institution management. Pick the modules you need, or deploy the complete suite.
+              A flexible, modular school ERP that brings academics, administration, and communication into one
+              powerful system. Choose only what your school needs or run the full suite for complete control.
             </p>
           </ScrollAnimation>
 
@@ -158,7 +136,7 @@ const ERPSolutions = () => {
             <div className="container-custom">
               <ScrollAnimation animation="fade-up">
                 <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
-                  12 Integrated <span className="text-gradient">Modules</span>
+                  9 Integrated <span className="text-gradient">Modules</span>
                 </h2>
               </ScrollAnimation>
 
@@ -204,70 +182,6 @@ const ERPSolutions = () => {
             </div>
           </section>
 
-          {/* Integration Section */}
-          <section className="py-12 md:py-16 bg-[rgb(221,3,3)] text-background">
-            <div className="container-custom">
-              <div className="grid lg:grid-cols-2 gap-10 items-center">
-                <div>
-                  <ScrollAnimation animation="fade-right">
-                    <h2 className="font-heading text-2xl md:text-3xl font-bold mb-5">
-                      Seamless <span className="text-primary">Integration</span>
-                    </h2>
-                  </ScrollAnimation>
-
-                  <ScrollAnimation animation="fade-right" delay={100}>
-                    <p className="text-background/70 leading-relaxed mb-5">
-                      Our ERP platform is designed with interoperability in mind. All modules share a
-                      unified database, ensuring data consistency and eliminating redundancy.
-                    </p>
-                  </ScrollAnimation>
-
-                  <ScrollAnimation animation="fade-right" delay={200}>
-                    <ul className="space-y-3">
-                      {[
-                        "Single sign-on across all modules",
-                        "Real-time data synchronization",
-                        "Unified reporting dashboard",
-                        "API access for custom integrations",
-                        "Third-party app marketplace",
-                      ].map((item, index) => (
-                        <li key={index} className="flex items-center gap-3 text-background/80 text-sm">
-                          <ChevronRight className="w-4 h-4 text-primary shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </ScrollAnimation>
-                </div>
-
-                <ScrollAnimation animation="fade-left">
-                  <div className="relative">
-                    {/* Central Hub */}
-                    <div className="w-28 h-28 rounded-full bg-primary flex items-center justify-center mx-auto z-10 relative">
-                      <span className="font-heading font-bold text-primary-foreground text-sm">My Vidyon</span>
-                    </div>
-
-                    {/* Orbiting Modules */}
-                    <div className="absolute inset-0 animate-spin-slow" style={{ animationDuration: "30s" }}>
-                      {[GraduationCap, ClipboardList, BarChart3, CreditCard].map((Icon, index) => (
-                        <div
-                          key={index}
-                          className="absolute w-10 h-10 rounded-full bg-background/10 flex items-center justify-center"
-                          style={{
-                            top: `${50 + 40 * Math.sin((index * Math.PI) / 2)}%`,
-                            left: `${50 + 40 * Math.cos((index * Math.PI) / 2)}%`,
-                            transform: "translate(-50%, -50%)",
-                          }}
-                        >
-                          <Icon className="w-5 h-5 text-primary" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </ScrollAnimation>
-              </div>
-            </div>
-          </section>
 
           <CTASection />
         </>

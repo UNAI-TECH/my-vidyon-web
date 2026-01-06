@@ -14,20 +14,16 @@ const footerLinks = {
   company: [
     { name: "About Us", path: "/about" },
     { name: "Our Team", path: "/about" },
-    { name: "Careers", path: "/contact" },
-    { name: "News", path: "/" },
+    { name: "Careers", path: "/careers" },
   ],
   solutions: [
     { name: "ERP Solutions", path: "/erp-solutions" },
     { name: "Attendance System", path: "/attendance-system" },
-    { name: "Academic Management", path: "/features" },
-    { name: "Analytics & Reports", path: "/features" },
   ],
   support: [
     { name: "Contact Us", path: "/contact" },
-    { name: "Documentation", path: "/" },
-    { name: "FAQs", path: "/" },
-    { name: "Support Portal", path: "/" },
+    { name: "FAQs", path: "/faq" },
+    { name: "Support Portal", path: "/contact" },
   ],
 };
 

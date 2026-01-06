@@ -11,42 +11,40 @@ import {
   Smartphone,
   Clock,
   BarChart3,
-  Users,
-  Shield,
-  CheckCircle2,
-  Play
+  Play,
+  Puzzle
 } from "lucide-react";
 
 const features = [
   {
     icon: Camera,
-    title: "AI Facial Recognition",
-    description: "Advanced machine learning algorithms identify students in milliseconds, even with masks or accessories.",
+    title: "AI Facial Recognition Attendance",
+    description: "AI-driven facial recognition identifies students in milliseconds, even with masks or accessories, ensuring contactless and error-free attendance.",
   },
   {
     icon: Fingerprint,
-    title: "Biometric Integration",
-    description: "Support for fingerprint and RFID card readers for multi-factor attendance verification.",
+    title: "Biometric Attendance Integration",
+    description: "Seamless support for fingerprint scanners and RFID cards for reliable, multi-factor attendance tracking.",
   },
   {
     icon: Bell,
-    title: "Instant Notifications",
-    description: "Parents receive real-time SMS and app notifications when their child enters or leaves campus.",
+    title: "Instant Parent Notifications",
+    description: "Automatic SMS and app alerts notify parents in real time when students enter or exit the school campus.",
   },
   {
     icon: Smartphone,
-    title: "Mobile App",
-    description: "Dedicated apps for teachers, students, and parents with attendance history and analytics.",
+    title: "Mobile Attendance App",
+    description: "Dedicated mobile apps for teachers, students, and parents with live attendance status, history, and insights.",
   },
   {
     icon: Clock,
-    title: "Late Arrival Tracking",
-    description: "Automatic flagging of late arrivals with configurable grace periods and escalation rules.",
+    title: "Late Arrival & Early Exit Tracking",
+    description: "Smart rules detect late entries and early exits with configurable grace periods and automated escalation.",
   },
   {
     icon: BarChart3,
-    title: "Comprehensive Reports",
-    description: "Detailed analytics with trend analysis, absence patterns, and exportable reports.",
+    title: "Advanced Attendance Reports",
+    description: "Comprehensive attendance analytics with trend insights, absence patterns, and one-click report exports.",
   },
 ];
 
@@ -73,14 +71,8 @@ const howItWorks = [
   },
 ];
 
-const benefits = [
-  "Eliminate proxy attendance completely",
-  "Save 30+ hours per month on manual work",
-  "Improve parent engagement by 85%",
-  "Reduce late arrivals by 40%",
-  "100% accurate attendance records",
-  "Seamless integration with ERP",
-];
+
+
 
 const AttendanceSystem = () => {
   return (
@@ -88,7 +80,7 @@ const AttendanceSystem = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="min-h-[50vh] pt-24 pb-12 flex items-center relative overflow-hidden">
+      <section className="h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative">
@@ -109,9 +101,9 @@ const AttendanceSystem = () => {
 
               <ScrollAnimation animation="fade-right" delay={200}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The most advanced AI-powered attendance solution for educational institutions.
-                  Eliminate manual errors, reduce administrative burden, and keep parents
-                  informed in real-time.
+                  An AI-powered school attendance system built for accuracy, speed, and trust. Automate
+                  attendance using facial recognition and biometrics, eliminate proxy entries, reduce staff workload,
+                  and keep parents updated in real time.
                 </p>
               </ScrollAnimation>
 
@@ -148,16 +140,16 @@ const AttendanceSystem = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-12 md:py-16 bg-[rgb(221,3,3)] text-background">
+      <section className="py-12 md:py-16" style={{ backgroundColor: '#FEF3E2' }}>
         <div className="container-custom">
           <ScrollAnimation animation="fade-up">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
-              How It <span className="text-primary">Works</span>
+              How It <span className="text-gradient">Works</span>
             </h2>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={100}>
-            <p className="text-background/70 text-center max-w-2xl mx-auto mb-10">
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
               From capture to notification in under 2 seconds. Here's the seamless flow.
             </p>
           </ScrollAnimation>
@@ -165,20 +157,20 @@ const AttendanceSystem = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {howItWorks.map((item, index) => (
               <ScrollAnimation key={index} animation="fade-up" delay={index * 100}>
-                <div className="relative text-center">
-                  <div className="text-5xl font-heading font-bold text-primary/20 mb-3">
+                <div className="relative text-center card-elevated p-6 h-full">
+                  <div className="text-5xl font-heading font-bold text-gradient mb-3">
                     {item.step}
                   </div>
-                  <h3 className="font-heading font-semibold text-lg text-background mb-2">
+                  <h3 className="font-heading font-semibold text-lg mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-background/60 text-sm">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {item.description}
                   </p>
 
                   {/* Connector Line */}
                   {index < howItWorks.length - 1 && (
-                    <div className="hidden lg:block absolute top-6 -right-3 w-6 h-px bg-background/20" />
+                    <div className="hidden lg:block absolute top-6 -right-3 w-6 h-px bg-primary/20" />
                   )}
                 </div>
               </ScrollAnimation>
@@ -192,13 +184,13 @@ const AttendanceSystem = () => {
         <div className="container-custom">
           <ScrollAnimation animation="fade-up">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
-              Powerful <span className="text-gradient">Features</span>
+              Powerful Attendance Management <span className="text-gradient">Features</span>
             </h2>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={100}>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-              Everything you need for foolproof attendance management, all in one system.
+              Everything schools need for fast, accurate, and secure student attendance—powered by AI.
             </p>
           </ScrollAnimation>
 
@@ -218,54 +210,80 @@ const AttendanceSystem = () => {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <ScrollAnimation animation="fade-right">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-5">
-                  Why Schools <span className="text-gradient">Love It</span>
-                </h2>
-              </ScrollAnimation>
+      {/* Benefits - Why Schools Love It */}
+      <section className="py-12 md:py-16 relative overflow-hidden">
+        {/* Subtle Background Elements to give it a 'Theme' feel without boxing */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 radial-gradient blur-3xl rounded-full pointer-events-none opacity-50" />
 
-              <ScrollAnimation animation="fade-right" delay={100}>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Join 500+ institutions that have transformed their attendance management.
-                  See measurable results from day one.
-                </p>
-              </ScrollAnimation>
+        <div className="container-custom relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <ScrollAnimation animation="fade-up">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                Why Schools <span className="text-gradient">Love It</span>
+              </h2>
+            </ScrollAnimation>
 
-              <div className="grid sm:grid-cols-2 gap-3">
-                {benefits.map((benefit, index) => (
-                  <ScrollAnimation key={index} animation="fade-right" delay={150 + index * 50}>
-                    <div className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                      <span className="text-sm">{benefit}</span>
-                    </div>
-                  </ScrollAnimation>
-                ))}
+            <ScrollAnimation animation="fade-up" delay={100}>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Trusted by 500+ schools, our AI-powered attendance system delivers instant results with zero
+                manual effort and maximum accuracy.
+              </p>
+            </ScrollAnimation>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 text-center">
+            <ScrollAnimation animation="fade-up" delay={100} className="col-span-1">
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-heading font-bold text-gradient mb-3">
+                  100%
+                </div>
+                <div className="h-1 w-12 bg-primary/30 rounded-full mb-4" />
+                <h3 className="font-bold text-foreground mb-1">Accurate</h3>
+                <p className="text-sm text-muted-foreground">Proxy-free attendance</p>
               </div>
-            </div>
+            </ScrollAnimation>
 
-            <ScrollAnimation animation="fade-left">
-              <div className="card-elevated p-6">
-                <div className="flex items-center gap-4 mb-5">
-                  <Shield className="w-10 h-10 text-primary" />
-                  <div>
-                    <div className="font-heading font-bold text-2xl">99.9%</div>
-                    <div className="text-muted-foreground text-sm">Accuracy Rate</div>
-                  </div>
+            <ScrollAnimation animation="fade-up" delay={200} className="col-span-1">
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-heading font-bold text-gradient mb-3">
+                  30+
                 </div>
-                <p className="text-muted-foreground italic text-sm">
-                  "The accuracy is remarkable. We've virtually eliminated proxy attendance
-                  and parents appreciate the instant notifications. It's been a game-changer
-                  for our school."
-                </p>
-                <div className="mt-4 pt-4 border-t border-border">
-                  <div className="font-heading font-semibold text-sm">Mrs. Priya Patel</div>
-                  <div className="text-xs text-muted-foreground">Vice Principal, St. Mary's School</div>
+                <div className="h-1 w-12 bg-primary/30 rounded-full mb-4" />
+                <h3 className="font-bold text-foreground mb-1">Hours Saved</h3>
+                <p className="text-sm text-muted-foreground">Admin time per month</p>
+              </div>
+            </ScrollAnimation>
+
+            <ScrollAnimation animation="fade-up" delay={300} className="col-span-1">
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-heading font-bold text-gradient mb-3">
+                  85%
                 </div>
+                <div className="h-1 w-12 bg-primary/30 rounded-full mb-4" />
+                <h3 className="font-bold text-foreground mb-1">Higher Engagement</h3>
+                <p className="text-sm text-muted-foreground">Real-time alerts</p>
+              </div>
+            </ScrollAnimation>
+
+            <ScrollAnimation animation="fade-up" delay={400} className="col-span-1">
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-heading font-bold text-gradient mb-3">
+                  40%
+                </div>
+                <div className="h-1 w-12 bg-primary/30 rounded-full mb-4" />
+                <h3 className="font-bold text-foreground mb-1">Less Late Arrivals</h3>
+                <p className="text-sm text-muted-foreground">Improved discipline</p>
+              </div>
+            </ScrollAnimation>
+
+            <ScrollAnimation animation="fade-up" delay={500} className="col-span-2 lg:col-span-1 flex justify-center">
+              <div className="flex flex-col items-center">
+                <div className="h-[3.75rem] md:h-[4.5rem] flex items-center justify-center mb-3">
+                  <Puzzle className="w-14 h-14 md:w-16 md:h-16 text-primary" />
+                </div>
+                <div className="h-1 w-12 bg-primary/30 rounded-full mb-4" />
+                <h3 className="font-bold text-foreground mb-1">Seamless</h3>
+                <p className="text-sm text-muted-foreground">ERP Integration</p>
               </div>
             </ScrollAnimation>
           </div>

@@ -2,10 +2,10 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   Clock,
   Send,
   MessageSquare,
@@ -73,10 +73,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     toast.success("Thank you for reaching out! We'll get back to you within 24 hours.");
     setFormData({ name: "", email: "", phone: "", institution: "", message: "" });
     setIsSubmitting(false);
@@ -92,27 +92,27 @@ const Contact = () => {
   return (
     <main className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero */}
       <section className="pt-28 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero" />
-        
+
         <div className="container-custom relative text-center">
           <ScrollAnimation animation="fade-up">
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
               Get in Touch
             </span>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={100}>
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
               Let's <span className="text-gradient">Connect</span>
             </h1>
           </ScrollAnimation>
-          
+
           <ScrollAnimation animation="fade-up" delay={200}>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Ready to transform your institution? Have questions? Our team is here 
+              Ready to transform your institution? Have questions? Our team is here
               to help you find the perfect solution.
             </p>
           </ScrollAnimation>
@@ -131,7 +131,7 @@ const Contact = () => {
                     <MessageSquare className="w-5 h-5 text-primary" />
                     <h2 className="font-heading font-bold text-xl">Send us a Message</h2>
                   </div>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
@@ -167,7 +167,7 @@ const Contact = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium mb-1.5">
@@ -200,7 +200,7 @@ const Contact = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium mb-1.5">
                         How can we help? *
@@ -217,7 +217,7 @@ const Contact = () => {
                         placeholder="Tell us about your requirements, number of students, current systems, etc."
                       />
                     </div>
-                    
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -285,34 +285,6 @@ const Contact = () => {
                 </div>
               </ScrollAnimation>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section className="py-10 md:py-14 bg-muted/30">
-        <div className="container-custom">
-          <ScrollAnimation animation="fade-up">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">
-              Frequently Asked <span className="text-gradient">Questions</span>
-            </h2>
-          </ScrollAnimation>
-          
-          <ScrollAnimation animation="fade-up" delay={100}>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-              Quick answers to common questions. Can't find what you're looking for? Reach out to us directly.
-            </p>
-          </ScrollAnimation>
-
-          <div className="max-w-3xl mx-auto grid gap-4">
-            {faqs.map((faq, index) => (
-              <ScrollAnimation key={index} animation="fade-up" delay={150 + index * 50}>
-                <div className="card-elevated p-5">
-                  <h3 className="font-heading font-semibold text-base mb-1.5">{faq.question}</h3>
-                  <p className="text-muted-foreground text-sm">{faq.answer}</p>
-                </div>
-              </ScrollAnimation>
-            ))}
           </div>
         </div>
       </section>

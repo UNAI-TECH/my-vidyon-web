@@ -10,6 +10,8 @@ import ERPSolutions from "./pages/ERPSolutions";
 import AttendanceSystem from "./pages/AttendanceSystem";
 import Features from "./pages/Features";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
+import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -17,11 +19,11 @@ const queryClient = new QueryClient();
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
-  
+
   return null;
 };
 
@@ -36,6 +38,8 @@ const AppRoutes = () => {
         <Route path="/attendance-system" element={<AttendanceSystem />} />
         <Route path="/features" element={<Features />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

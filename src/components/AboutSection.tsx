@@ -1,27 +1,28 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, ScanFace, LayoutGrid, Wallet, TrendingUp } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
+import FeatureSpotlight from "./FeatureSpotlight";
 
 const features = [
   {
     icon: ScanFace,
     title: "Smart Attendance Monitoring",
-    description: "Camera-based attendance detection with real-time tracking for accuracy and reliability.",
+    description: "AI-powered, camera-based attendance that captures accurate, real-time student presence and keeps parents informed instantly.",
   },
   {
     icon: LayoutGrid,
     title: "Comprehensive Dashboards",
-    description: "Role-based dashboards offering tailored access for administrators, teachers, parents, and students.",
+    description: "Role-based school dashboards designed for administrators, teachers, parents, and students—clear data, zero confusion.",
   },
   {
     icon: Wallet,
     title: "Secure Fee Management",
-    description: "Transparent, streamlined, and secure payment processing with complete financial visibility.",
+    description: "End-to-end school fee management with safe online payments, automated tracking, and complete financial transparency.",
   },
   {
     icon: TrendingUp,
     title: "Performance Analytics",
-    description: "Actionable academic insights through data-driven performance reports.",
+    description: "Data-driven academic analytics that turn student performance into clear, actionable insights for better outcomes.",
   },
 ];
 
@@ -42,24 +43,23 @@ export const AboutSection = () => {
 
           <ScrollAnimation animation="fade-up" delay={100}>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Redefining Educational Management,{" "}
-              <span className="text-gradient">Digitally</span>
+              Smart ERP Software for <span className="text-gradient">Modern Schools</span>
             </h2>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={200}>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-              My Vidyon is a powerful and comprehensive ERP platform built exclusively for schools and colleges.
-              Designed to simplify daily operations and enhance collaboration, My Vidyon connects students,
-              teachers, parents, and administrators through a single, unified digital ecosystem.
+              My Vidyon is a powerful, all in one school ERP platform built to simplify academic and
+              administrative management. Designed for modern schools, it brings students, teachers, parents,
+              and administrators onto one secure digital system.
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fade-up" delay={300}>
             <p className="text-muted-foreground leading-relaxed">
-              From smart attendance tracking to secure fee management and performance analytics,
-              My Vidyon delivers real-time insights that empower institutions to operate efficiently,
-              transparently, and confidently in today's digital-first education environment.
+              From AI powered attendance and online fee management to student performance analytics, My
+              Vidyon helps schools operate efficiently, communicate better, and make data driven decisions with
+              confidence.
             </p>
           </ScrollAnimation>
         </div>
@@ -74,18 +74,25 @@ export const AboutSection = () => {
         </ScrollAnimation>
 
         {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
           {features.map((feature, index) => (
-            <ScrollAnimation key={index} animation="fade-up" delay={450 + index * 80}>
-              <div className="card-elevated p-6 text-center h-full">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-7 h-7 text-primary" />
+            <ScrollAnimation key={index} animation="fade-up" delay={450 + index * 100}>
+              <FeatureSpotlight className="group p-6 text-center h-full border-2 border-primary/30 hover:border-primary/60 shadow-[0_0_15px_rgba(250,177,47,0.3)] hover:shadow-[0_0_25px_rgba(250,177,47,0.5)] transition-all duration-300">
+                {/* Icon with animated background */}
+                <div className="relative mx-auto mb-6 w-20 h-20 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-primary/5 rounded-3xl rotate-45 group-hover:rotate-90 transition-transform duration-500 ease-out" />
+                  <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-12 group-hover:rotate-0 transition-transform duration-500 ease-out" />
+                  <feature.icon className="relative z-10 w-9 h-9 text-primary group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{feature.title}</h3>
+
+                <h3 className="font-heading font-bold text-lg mb-3">
+                  {feature.title}
+                </h3>
+
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {feature.description}
                 </p>
-              </div>
+              </FeatureSpotlight>
             </ScrollAnimation>
           ))}
         </div>

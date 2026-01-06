@@ -2,23 +2,24 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import CTASection from "@/components/CTASection";
+import WhyChooseSection from "@/components/WhyChooseSection";
 import { Target, Eye, Heart, Award, Users, Building2, GraduationCap, Globe } from "lucide-react";
 
 const values = [
   {
     icon: Target,
     title: "Mission",
-    description: "To empower educational institutions with cutting-edge technology that simplifies administration, enhances learning outcomes, and connects communities.",
+    description: "To help schools run smarter every day by delivering simple, secure ERP solutions that reduce admin workload and create more time for teaching and student development.",
   },
   {
     icon: Eye,
     title: "Vision",
-    description: "To be the global standard for educational ERP solutions, driving digital transformation across institutions of all sizes.",
+    description: "To be the most trusted school ERP platform globally, enabling digital-first schools that are efficient, connected, and future ready.",
   },
   {
     icon: Heart,
     title: "Values",
-    description: "Integrity, innovation, and impact guide everything we do. We believe technology should serve people, not the other way around.",
+    description: "We stand for integrity in data, innovation in learning systems, and meaningful impact in classrooms. Our technology is built to support educators, students, and parents seamlessly.",
   },
 ];
 
@@ -42,12 +43,13 @@ const About = () => {
     <main className="min-h-screen">
       <Navbar />
 
+
       {/* Hero */}
-      <section className="min-h-[50vh] flex items-center relative overflow-hidden py-12 mt-16 md:mt-0">
+      <section className="flex items-center relative overflow-hidden py-16 md:py-20 mt-16 md:mt-0">
         <div className="absolute inset-0 bg-gradient-hero" />
 
         <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="order-2 lg:order-1">
               <ScrollAnimation animation="fade-right">
@@ -57,17 +59,17 @@ const About = () => {
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-right" delay={100}>
-                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
-                  Transforming Education Through{" "}
-                  <span className="text-gradient">Intelligent Technology</span>
+                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                  Smart Technology <br />for{" "}
+                  <span className="text-gradient">Smarter Schools</span>
                 </h1>
               </ScrollAnimation>
 
               <ScrollAnimation animation="fade-right" delay={200}>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                  We're not just building software — we're shaping the future of educational
-                  management. Our solutions connect administrators, teachers, students, and
-                  parents in one seamless ecosystem.
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
+                  We build intelligent school ERP solutions that simplify administration and strengthen
+                  communication between school leaders, teachers, students, and parents all on one secure
+                  platform.
                 </p>
               </ScrollAnimation>
             </div>
@@ -80,7 +82,7 @@ const About = () => {
                   <img
                     src="/about-hero.png"
                     alt="Transforming Education"
-                    className="relative w-full max-w-md lg:max-w-lg h-auto object-contain z-10 drop-shadow-2xl"
+                    className="relative w-full max-w-sm lg:max-w-md h-auto object-contain z-10 drop-shadow-2xl"
                   />
                 </div>
               </ScrollAnimation>
@@ -88,6 +90,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Choose My Vidyon */}
+      <WhyChooseSection />
 
       {/* Mission, Vision, Values */}
       <section className="py-12 md:py-16">
@@ -109,71 +114,115 @@ const About = () => {
       </section>
 
 
-
       {/* Timeline */}
 
 
       {/* Why Choose Us */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <ScrollAnimation animation="fade-right">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-5">
-                  Why Institutions <span className="text-gradient">Choose Us</span>
+      <section className="py-16 md:py-20 relative overflow-hidden" style={{ backgroundColor: '#FEF3E2' }}>
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <ScrollAnimation animation="fade-up">
+                <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                    Our Advantage
+                  </span>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fade-up" delay={100}>
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-5">
+                  Why Schools <span className="text-gradient">Choose Us</span>
                 </h2>
               </ScrollAnimation>
 
-              <ScrollAnimation animation="fade-right" delay={100}>
-                <p className="text-muted-foreground leading-relaxed mb-5">
-                  We understand that every institution is unique. That's why our solutions
-                  are built to be flexible, scalable, and intuitive. Our team consists of
-                  education specialists who have walked in your shoes.
+              <ScrollAnimation animation="fade-up" delay={200}>
+                <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+                  Every school is different and our ERP adapts, not forces change.
+                  We build simple, scalable solutions backed by real education experience.
                 </p>
-              </ScrollAnimation>
-
-              <ScrollAnimation animation="fade-right" delay={200}>
-                <ul className="space-y-3">
-                  {[
-                    "Deep understanding of educational workflows",
-                    "Dedicated implementation and training support",
-                    "Continuous innovation based on user feedback",
-                    "Transparent pricing with no hidden costs",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Award className="w-5 h-5 text-primary shrink-0" />
-                      <span className="text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </ScrollAnimation>
             </div>
 
-            <ScrollAnimation animation="fade-left">
-              <div className="card-elevated p-6">
-                <blockquote className="text-base italic text-muted-foreground leading-relaxed mb-5">
-                  "My Vidyon transformed how we manage our school. What used to take hours
-                  now takes minutes. The attendance system alone has saved us countless
-                  headaches and improved parent communication significantly."
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="font-heading font-bold text-primary text-sm">RS</span>
+            {/* Benefits - Vertical Timeline Style */}
+            <div className="space-y-6">
+              {[
+                {
+                  number: "01",
+                  title: "Built around real school workflows",
+                  description: "Our platform mirrors how schools actually operate, reducing training time and increasing adoption rates."
+                },
+                {
+                  number: "02",
+                  title: "Smooth onboarding with full training support",
+                  description: "Comprehensive training programs and dedicated support ensure your team is confident from day one."
+                },
+                {
+                  number: "03",
+                  title: "Regular updates driven by school feedback",
+                  description: "We listen to educators and continuously improve based on real-world usage and suggestions."
+                },
+                {
+                  number: "04",
+                  title: "Transparent pricing with zero hidden costs",
+                  description: "Clear, straightforward pricing with no surprises. What you see is what you pay."
+                },
+              ].map((item, index) => (
+                <ScrollAnimation key={index} animation="fade-up" delay={300 + index * 100}>
+                  <div className="group relative">
+                    {/* Main Card */}
+                    <div className="relative p-8 rounded-3xl bg-gradient-to-br from-background via-background/95 to-background/90 backdrop-blur-xl border-2 border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-[0_0_30px_rgba(250,177,47,0.25)] transition-all duration-500 overflow-hidden">
+                      {/* Animated gradient background */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      {/* Glowing orb */}
+                      <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/10 blur-3xl group-hover:bg-primary/20 transition-all duration-500" />
+
+                      <div className="relative flex items-start gap-6">
+                        {/* Large Number */}
+                        <div className="relative shrink-0">
+                          <div className="text-7xl md:text-8xl font-heading font-black text-primary/10 group-hover:text-primary/20 transition-colors duration-500">
+                            {item.number}
+                          </div>
+                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                              <Award className="w-8 h-8 text-primary" />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1 pt-2">
+                          <h3 className="font-heading text-xl md:text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                            {item.title}
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Bottom accent line */}
+                      <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-primary to-primary/50 group-hover:w-full transition-all duration-500" />
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-heading font-semibold text-sm">Dr. Rajesh Sharma</div>
-                    <div className="text-xs text-muted-foreground">Principal, Delhi Public School</div>
-                  </div>
-                </div>
-              </div>
-            </ScrollAnimation>
+                </ScrollAnimation>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+
       <CTASection />
       <Footer />
-    </main>
+    </main >
   );
 };
 

@@ -5,24 +5,28 @@ import FeatureSpotlight from "./FeatureSpotlight";
 const benefits = [
   {
     icon: UsersRound,
+    value: "100%",
     title: "Unified Platform",
     description:
       "One integrated system connecting students, teachers, parents, and administrators seamlessly.",
   },
   {
     icon: Timer,
+    value: "70%",
     title: "Save Time",
     description:
       "Automate routine tasks and reduce administrative workload by up to 70%.",
   },
   {
     icon: MonitorCheck,
+    value: "Real-Time",
     title: "Real-Time Insights",
     description:
       "Access live dashboards and analytics to make data-driven decisions instantly.",
   },
   {
     icon: Headset,
+    value: "24/7",
     title: "24/7 Support",
     description:
       "Dedicated support team available round the clock to assist with any queries.",
