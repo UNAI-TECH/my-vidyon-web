@@ -216,14 +216,7 @@ const CareersPage = () => {
                                 <span className="hidden sm:inline">Life at My Vidyon</span>
                             </Link>
 
-                            {/* How We Hire */}
-                            <Link
-                                to="/careers/how-we-hire"
-                                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-background/90 hover:text-primary focus:text-primary active:text-primary hover:bg-background/10 rounded-md transition-colors whitespace-nowrap"
-                            >
-                                <UserCheck className="w-4 h-4" />
-                                <span className="hidden sm:inline">How We Hire</span>
-                            </Link>
+
                         </div>
                     </div>
                 </div>
