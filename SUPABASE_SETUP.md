@@ -15,7 +15,7 @@ User fills form → Frontend calls Edge Function (with anon key)
                 ↓
         Edge Function (secure backend)
                 ↓
-        ├─→ Sends email via Resend API
+        ├─→ Sends email via Resend API (Deno-compatible)
         └─→ Stores in Supabase database
                 ↓
         Email delivered to madhan.p@storyseed.in
