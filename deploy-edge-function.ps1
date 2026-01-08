@@ -19,8 +19,8 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "1. Set your Gmail App Password:" -ForegroundColor White
     Write-Host "   npx supabase secrets set GMAIL_APP_PASSWORD=your_16_char_password" -ForegroundColor Gray
     Write-Host ""
-    Write-Host "2. Set Gmail user (optional, defaults to madhankumar070406@gmail.com):" -ForegroundColor White
-    Write-Host "   npx supabase secrets set GMAIL_USER=madhankumar070406@gmail.com" -ForegroundColor Gray
+    Write-Host "2. Set Gmail user (optional, defaults to myvidyon@gmail.com):" -ForegroundColor White
+    Write-Host "   npx supabase secrets set GMAIL_USER=myvidyon@gmail.com" -ForegroundColor Gray
     Write-Host ""
     Write-Host "3. Verify secrets:" -ForegroundColor White
     Write-Host "   npx supabase secrets list" -ForegroundColor Gray
@@ -36,7 +36,7 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host ""
     Write-Host "📧 Email Configuration:" -ForegroundColor Cyan
     Write-Host "   - Using Gmail SMTP (native Deno implementation)" -ForegroundColor White
-    Write-Host "   - Emails will be sent to: madhankumar070406@gmail.com" -ForegroundColor White
+    Write-Host "   - Emails will be sent to: myvidyon@gmail.com" -ForegroundColor White
     Write-Host "   - Data will be stored in Supabase database" -ForegroundColor White
     Write-Host ""
 } else {

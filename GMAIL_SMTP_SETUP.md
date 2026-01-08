@@ -28,13 +28,13 @@ Using Gmail SMTP with Nodemailer ensures 100% email delivery to your inbox.
 
 ```bash
 npx supabase secrets set GMAIL_APP_PASSWORD=your-16-char-password-here
-npx supabase secrets set GMAIL_USER=madhankumar070406@gmail.com
+npx supabase secrets set GMAIL_USER=myvidyon@gmail.com
 ```
 
 **Example:**
 ```bash
 npx supabase secrets set GMAIL_APP_PASSWORD=abcdefghijklmnop
-npx supabase secrets set GMAIL_USER=madhankumar070406@gmail.com
+npx supabase secrets set GMAIL_USER=myvidyon@gmail.com
 ```
 
 ### Step 4: Deploy the Edge Function
@@ -48,12 +48,12 @@ npx supabase functions deploy send-contact-email
 1. Go to your contact form
 2. Fill it out
 3. Submit
-4. Check madhankumar070406@gmail.com inbox
+4. Check myvidyon@gmail.com inbox
 5. ✅ Email should arrive within seconds!
 
 ## 📋 What You Need
 
-- ✅ Gmail account: madhankumar070406@gmail.com
+- ✅ Gmail account: myvidyon@gmail.com
 - ✅ 2-Step Verification enabled
 - ✅ App Password generated
 - ✅ App Password set in Supabase secrets
@@ -107,7 +107,7 @@ You'll receive beautifully formatted emails with:
 ```bash
 # 1. Set Gmail credentials
 npx supabase secrets set GMAIL_APP_PASSWORD=your-app-password
-npx supabase secrets set GMAIL_USER=madhankumar070406@gmail.com
+npx supabase secrets set GMAIL_USER=myvidyon@gmail.com
 
 # 2. Deploy function
 npx supabase functions deploy send-contact-email

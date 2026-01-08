@@ -110,7 +110,7 @@ async function sendGmailSMTP(
     }
 }
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
     // Handle CORS preflight requests
     if (req.method === 'OPTIONS') {
         return new Response('ok', { headers: corsHeaders })
@@ -154,7 +154,7 @@ Deno.serve(async (req) => {
         // Get environment variables
         const supabaseUrl = Deno.env.get('SUPABASE_URL')!
         const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-        const gmailUser = Deno.env.get('GMAIL_USER') || 'madhankumar070406@gmail.com'
+        const gmailUser = Deno.env.get('GMAIL_USER') || 'myvidyon@gmail.com'
         const gmailPassword = Deno.env.get('GMAIL_APP_PASSWORD')
 
         console.log('Environment check:', {
@@ -304,8 +304,9 @@ Reply to: ${email}
                     })
                     .eq('id', submission.id)
 
-            } catch (emailError: any) {
-                console.error('❌ Email Error:', emailError.message)
+            } catch (emailError) {
+                const errorMessage = emailError instanceof Error ? emailError.message : 'Unknown email error'
+                console.error('❌ Email Error:', errorMessage)
                 console.error('Full error:', emailError)
                 // Don't fail the request if email fails, submission is already stored
             }
@@ -329,12 +330,13 @@ Reply to: ${email}
             }
         )
 
-    } catch (error: any) {
+    } catch (error) {
         console.error('❌ Error:', error)
+        const errorMessage = error instanceof Error ? error.message : 'An error occurred while processing your request. Please try again.'
         return new Response(
             JSON.stringify({
                 success: false,
-                error: error.message || 'An error occurred while processing your request. Please try again.'
+                error: errorMessage
             }),
             {
                 status: 500,

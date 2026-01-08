@@ -7,7 +7,7 @@ Your Edge Function is now configured to use **Gmail SMTP** with **Google App Pas
 - ✅ Uses native Deno APIs (no nodemailer dependency)
 - ✅ Works in both local testing and production
 - ✅ Stores all submissions in Supabase database
-- ✅ Sends emails to: `madhankumar070406@gmail.com`
+- ✅ Sends emails to: `myvidyon@gmail.com`
 - ✅ Supports reply-to functionality
 
 ## 🔑 Step 1: Get Your Gmail App Password
@@ -40,8 +40,8 @@ After deployment, set your Gmail credentials as secrets:
 # Set your Gmail App Password (REQUIRED)
 npx supabase secrets set GMAIL_APP_PASSWORD=abcdefghijklmnop
 
-# Set Gmail user email (OPTIONAL - defaults to madhankumar070406@gmail.com)
-npx supabase secrets set GMAIL_USER=madhankumar070406@gmail.com
+# Set Gmail user email (OPTIONAL - defaults to myvidyon@gmail.com)
+npx supabase secrets set GMAIL_USER=myvidyon@gmail.com
 ```
 
 **Important:** Replace `abcdefghijklmnop` with your actual 16-character App Password.
@@ -66,7 +66,7 @@ You should see:
 3. Fill out and submit the contact form
 4. Check:
    - ✅ Success message appears
-   - ✅ Email arrives at `madhankumar070406@gmail.com`
+   - ✅ Email arrives at `myvidyon@gmail.com`
    - ✅ Submission is stored in Supabase database
 
 ### Test in Production:
@@ -150,7 +150,7 @@ Edge Function (Deno runtime)
     ├─→ Stores data in Supabase database ✅
     └─→ Sends email via Gmail SMTP ✅
         ↓
-Email delivered to madhankumar070406@gmail.com
+Email delivered to myvidyon@gmail.com
 ```
 
 ## 🔐 Security Notes
@@ -219,7 +219,7 @@ npx supabase functions deploy send-contact-email
 
 # Set secrets
 npx supabase secrets set GMAIL_APP_PASSWORD=your_password
-npx supabase secrets set GMAIL_USER=madhankumar070406@gmail.com
+npx supabase secrets set GMAIL_USER=myvidyon@gmail.com
 
 # List secrets
 npx supabase secrets list
@@ -235,7 +235,7 @@ npm run dev
 
 **Status:** ✅ Gmail SMTP configured and ready for deployment!
 
-**Email Provider:** Gmail (madhankumar070406@gmail.com)
+**Email Provider:** Gmail (myvidyon@gmail.com)
 
 **Database:** Supabase (all submissions stored)
 
